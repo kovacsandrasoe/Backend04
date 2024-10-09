@@ -32,6 +32,15 @@ namespace Backend04.Controllers
             Movies.Remove(Movies.First(m => m.Id == id));
         }
 
+        [HttpPut]
+        public void Put([FromBody] Movie movie)
+        {
+            var existingMovie = Movies.First(m => m.Id == movie.Id);
+            existingMovie.Title = movie.Title;
+            existingMovie.Rating = movie.Rating;
+            existingMovie.IsReleased = movie.IsReleased;
+        }
+
 
     }
 }
