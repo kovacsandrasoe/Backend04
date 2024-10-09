@@ -25,6 +25,7 @@ namespace Backend04.Controllers
         [HttpPost]
         public void Post([FromBody] Movie movie)
         {
+            movie.Id = Guid.NewGuid().ToString();
             ctx.Movies.Add(movie);
             ctx.SaveChanges();
         }

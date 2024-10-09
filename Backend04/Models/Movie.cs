@@ -4,10 +4,15 @@
     {
         public string Id { get; set; }
 
-        public string Title { get; set; }
+        public string Title { get; set; } = "";
 
         public double Rating { get; set; }
 
         public bool IsReleased { get; set; }
+
+        public Movie()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
     }
 }
