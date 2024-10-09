@@ -20,6 +20,12 @@ namespace Backend04.Controllers
             return Movies;
         }
 
+        [HttpGet("{id}")]
+        public Movie Get(string id)
+        {
+            return Movies.First(m => m.Id == id);
+        }
+
         [HttpPost]
         public void Post([FromBody] Movie movie)
         {
