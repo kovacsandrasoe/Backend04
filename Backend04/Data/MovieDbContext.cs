@@ -7,6 +7,11 @@ namespace Backend04.Data
     {
         public DbSet<Movie> Movies { get; set; }
 
+        public MovieDbContext()
+        {
+            Database.EnsureCreated();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
