@@ -26,6 +26,11 @@ namespace Backend04.Controllers
             Movies.Add(movie);
         }
 
+        [HttpDelete("{id}")]
+        public void Delete(string id)
+        {
+            Movies.Remove(Movies.First(m => m.Id == id));
+        }
 
 
     }
