@@ -20,6 +20,12 @@ namespace Backend04.Controllers
             return Movies;
         }
 
+        [HttpPost]
+        public void Post([FromBody] Movie movie)
+        {
+            Movies.Add(movie);
+        }
+
 
 
     }
